@@ -6,7 +6,7 @@ This kernel patch adds additional CPU options to the Linux kernel accessible und
  Processor family --->
 ```
 ## Why a specific patch?
-The kernel uses its own set of CFLAGS, KCFLAGS. For exmaple, see:
+The kernel uses its own set of CFLAGS, KCFLAGS. For example, see:
 * [arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)
 * [arch/x86/Makefile_32.cpu](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile_32.cpu)
 * [arch/x86/Kconfig.cpu](https://github.com/torvalds/linux/blob/master/arch/x86/Kconfig.cpu)
@@ -62,12 +62,28 @@ The kernel uses its own set of CFLAGS, KCFLAGS. For exmaple, see:
     <td>-march=znver1</td>
   </tr>
   <tr>
-    <td>Intel Bonnell family of low-power Atom processors (Bonnell)</td>
+    <td>AMD Family 17h (Zen 2)</td>
+    <td>-march=znver2</td>
+  </tr>
+  <tr>
+    <td>AMD Family 19h (Zen 3)</td>
+    <td>-march=znver3</td>
+  </tr>
+  <tr>
+    <td>Intel Bonnell family of low-power Atom processors</td>
     <td>-march=bonnell</td>
   </tr>
   <tr>
-    <td>Intel Silvermont family of low-power Atom processors (Silvermont)</td>
+    <td>Intel Silvermont family of low-power Atom processors</td>
     <td>-march=silvermont</td>
+  </tr>
+  <tr>
+    <td>Intel Goldmont family of low-power Atom processors (Apollo Lake and Denverton)</td>
+    <td>-march=goldmont</td>
+  </tr>
+  <tr>
+    <td>Intel Goldmont Plus family of low-power Atom processors (Gemini Lake)</td>
+    <td>-march=goldmont-plus</td>
   </tr>
   <tr>
     <td>Intel 1st Gen Core i3/i5/i7-family (Nehalem)</td>
@@ -96,6 +112,30 @@ The kernel uses its own set of CFLAGS, KCFLAGS. For exmaple, see:
   <tr>
     <td>Intel 6th Gen Core i3/i5/i7-family (Skylake)</td>
     <td>-march=skylake</td>
+  </tr>
+  <tr>
+    <td>Intel 6th Gen Core i7/i9-family (Skylake X)</td>
+    <td>-march=skylake-avx512</td>
+  </tr>
+  <tr>
+    <td>Intel 8th Gen Core i3/i5/i7-family (Cannon Lake)</td>
+    <td>-march=cannonlake</td>
+  </tr>
+  <tr>
+    <td>Intel 10th Gen Core i7/i9-family (Ice Lake)</td>
+    <td>-march=icelake-client</td>
+  </tr>
+  <tr>
+    <td>Intel Xeon (Cascade Lake)</td>
+    <td>-march=cascadelake</td>
+  </tr>
+  <tr>
+    <td>Intel Xeon (Cooper Lake)</td>
+    <td>-march=cooperlake</td>
+  </tr>
+  <tr>
+    <td>Intel 3rd Gen 10nm++ i3/i5/i7/i9-family (Tiger Lake)</td>
+    <td>-march=tigerlake</td>
   </tr>
 </table>
 
@@ -155,10 +195,10 @@ Find support for older version of the linux kernel and of gcc in the outdated_ve
 
 ## Data
 ### Sandybridge vs. Generic
-![corei7avx](https://s19.postimg.org/t4pgz75kj/2620_M.png)
+![2620_m](https://user-images.githubusercontent.com/534822/39409974-d2d88a40-4bbd-11e8-9375-ce3aba6113dc.png)
 
 ### Ivybridge vs. Generic
-![coreavxi](https://s19.postimg.org/nuki7wlbn/3770_K.png)
+![3770_k](https://user-images.githubusercontent.com/534822/39409975-d2e90280-4bbd-11e8-9835-8a005933dcfc.png)
 
 ### Core2 vs. Generic
-![core2](https://s19.postimg.org/b4g9utddf/X3360.png)
+![x3360](https://user-images.githubusercontent.com/534822/39409976-d2fa28ee-4bbd-11e8-957a-ff46ba6f4ffa.png)
